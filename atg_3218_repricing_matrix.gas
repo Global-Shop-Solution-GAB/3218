@@ -1,0 +1,1204 @@
+Program.Sub.ScreenSU.Start
+gui.F_Repricing..create
+gui.F_Repricing..caption("Repricing Matrix")
+gui.F_Repricing..size(19980,8190)
+gui.F_Repricing..position(0,0)
+gui.F_Repricing..event(unload,f_repricing_unload)
+gui.F_Repricing..alwaysontop(False)
+gui.F_Repricing..fontname("Arial")
+gui.F_Repricing..fontsize(8)
+gui.F_Repricing..forecolor(0)
+gui.F_Repricing..fontstyle(,,,,)
+gui.F_Repricing..BackColor(-2147483633)
+gui.F_Repricing..controlbox(True)
+gui.F_Repricing..maxbutton(False)
+gui.F_Repricing..minbutton(False)
+gui.F_Repricing..mousepointer(0)
+gui.F_Repricing..moveable(True)
+gui.F_Repricing..sizeable(False)
+gui.F_Repricing..ShowInTaskBar(True)
+gui.F_Repricing..titlebar(True)
+gui.F_Repricing.lbl_txt5.create(label,"Product Line",True,1800,200,1,100,100,True,0,Arial,8,-2147483633,0)
+gui.F_Repricing.txtPL.create(textbox,"",True,1800,330,0,100,300,False,0,Arial,8,16777215,1)
+gui.F_Repricing.txtPL.maxLength(2)
+gui.F_Repricing.cmdPLBrows.create(button)
+gui.F_Repricing.cmdPLBrows.caption("^")
+gui.F_Repricing.cmdPLBrows.visible(True)
+gui.F_Repricing.cmdPLBrows.size(330,330)
+gui.F_Repricing.cmdPLBrows.zorder(0)
+gui.F_Repricing.cmdPLBrows.position(1950,300)
+gui.F_Repricing.cmdPLBrows.enabled(True)
+gui.F_Repricing.cmdPLBrows.fontname("Arial")
+gui.F_Repricing.cmdPLBrows.fontsize(8)
+gui.F_Repricing.cmdPLBrows.event(click,cmdplbrows_click)
+gui.F_Repricing.lbl_txt6.create(label,"Customer",True,1800,200,1,2350,100,True,0,Arial,8,-2147483633,0)
+gui.F_Repricing.txtCust.create(textbox,"",True,1800,330,0,2350,300,False,0,Arial,8,16777215,1)
+gui.F_Repricing.txtCust.maxLength(6)
+gui.F_Repricing.cmdCustBrows.create(button)
+gui.F_Repricing.cmdCustBrows.caption("^")
+gui.F_Repricing.cmdCustBrows.visible(True)
+gui.F_Repricing.cmdCustBrows.size(330,330)
+gui.F_Repricing.cmdCustBrows.zorder(0)
+gui.F_Repricing.cmdCustBrows.position(4200,300)
+gui.F_Repricing.cmdCustBrows.enabled(True)
+gui.F_Repricing.cmdCustBrows.fontname("Arial")
+gui.F_Repricing.cmdCustBrows.fontsize(8)
+gui.F_Repricing.cmdCustBrows.event(click,cmdcustbrows_click)
+gui.F_Repricing.lbl_txt7.create(label,"Part Number",True,1800,200,1,4600,100,True,0,Arial,8,-2147483633,0)
+gui.F_Repricing.txtPart.create(textbox,"",True,1800,330,0,4600,300,False,0,Arial,8,16777215,1)
+gui.F_Repricing.txtPart.maxLength(20)
+gui.F_Repricing.cmdPartBrows.create(button)
+gui.F_Repricing.cmdPartBrows.caption("^")
+gui.F_Repricing.cmdPartBrows.visible(True)
+gui.F_Repricing.cmdPartBrows.size(330,330)
+gui.F_Repricing.cmdPartBrows.zorder(0)
+gui.F_Repricing.cmdPartBrows.position(6450,300)
+gui.F_Repricing.cmdPartBrows.enabled(True)
+gui.F_Repricing.cmdPartBrows.fontname("Arial")
+gui.F_Repricing.cmdPartBrows.fontsize(8)
+gui.F_Repricing.cmdPartBrows.event(click,cmdpartbrows_click)
+gui.F_Repricing.cmdAdd.create(button)
+gui.F_Repricing.cmdAdd.caption("Add")
+gui.F_Repricing.cmdAdd.visible(True)
+gui.F_Repricing.cmdAdd.size(1000,360)
+gui.F_Repricing.cmdAdd.zorder(0)
+gui.F_Repricing.cmdAdd.position(6850,300)
+gui.F_Repricing.cmdAdd.enabled(True)
+gui.F_Repricing.cmdAdd.fontname("Arial")
+gui.F_Repricing.cmdAdd.fontsize(8)
+gui.F_Repricing.cmdAdd.event(click,cmdadd_click)
+gui.F_Repricing.cmdSave.create(button)
+gui.F_Repricing.cmdSave.caption("Save")
+gui.F_Repricing.cmdSave.visible(True)
+gui.F_Repricing.cmdSave.size(1000,360)
+gui.F_Repricing.cmdSave.zorder(0)
+gui.F_Repricing.cmdSave.position(100,7240)
+gui.F_Repricing.cmdSave.enabled(True)
+gui.F_Repricing.cmdSave.fontname("Arial")
+gui.F_Repricing.cmdSave.fontsize(8)
+gui.F_Repricing.cmdSave.event(click,cmdsave_click)
+gui.F_Repricing.cmdUpdate.create(button)
+gui.F_Repricing.cmdUpdate.caption("Update")
+gui.F_Repricing.cmdUpdate.visible(True)
+gui.F_Repricing.cmdUpdate.size(1000,360)
+gui.F_Repricing.cmdUpdate.zorder(0)
+gui.F_Repricing.cmdUpdate.position(1150,7240)
+gui.F_Repricing.cmdUpdate.enabled(True)
+gui.F_Repricing.cmdUpdate.fontname("Arial")
+gui.F_Repricing.cmdUpdate.fontsize(8)
+gui.F_Repricing.cmdUpdate.event(click,cmdupdate_click)
+gui.F_Repricing.gsfMatrix.create(gsflexgrid)
+gui.F_Repricing.gsfMatrix.FixedRows(0)
+gui.F_Repricing.gsfMatrix.FixedCols(0)
+gui.F_Repricing.gsfMatrix.visible(True)
+gui.F_Repricing.gsfMatrix.size(19665,6375)
+gui.F_Repricing.gsfMatrix.zorder(0)
+gui.F_Repricing.gsfMatrix.position(100,755)
+gui.F_Repricing.gsfMatrix.enabled(True)
+gui.F_Repricing.gsfMatrix.event(commandclick,gsfmatrix_commandclick)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Variable.UDT.uMatrix.Define("PL",String,"Product_Line")
+Variable.UDT.uMatrix.Define("Cust",String,"Customer")
+Variable.UDT.uMatrix.Define("Part",String,"Part")
+Variable.UDT.uMatrix.Define("List",Long,"List_Price")
+Variable.UDT.uMatrix.Define("Alt1",Long,"Alt1_Price")
+Variable.UDT.uMatrix.Define("Alt2",Long,"Alt2_Price")
+Variable.UDT.uMatrix.Define("Alt3",Long,"Alt3_Price")
+Variable.UDT.uMatrix.Define("Alt4",Long,"Alt4_Price")
+Variable.UDT.uMatrix.Define("Alt5",Long,"Alt5_Price")
+Variable.UDT.uMatrix.Define("Alt6",Long,"Alt6_Price")
+Variable.UDT.uMatrix.Define("Alt7",Long,"Alt7_Price")
+Variable.UDT.uMatrix.Define("Alt8",Long,"Alt8_Price")
+Variable.UDT.uMatrix.Define("Alt9",Long,"Alt9_Price")
+Variable.UDT.uMatrix.Define("Alt10",Long,"Alt10_Price")
+Variable.UDT.uMatrix.Define("Alt11",Long,"Alt11_Price")
+Variable.UDT.uMatrix.Define("Alt12",Long,"Alt12_Price")
+Variable.UDT.uMatrix.Define("Alt13",Long,"Alt13_Price")
+Variable.UDT.uMatrix.Define("Alt14",Long,"Alt14_Price")
+Variable.uGlobal.uMatrix.Declare("uMatrix")
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Coded by: MLA
+'Project Start Date: 3/8/2011
+'Notes:
+'  Tri-Steel Manufacturing
+F.ODBC.Connection!con.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass,7200)
+F.Intrinsic.Control.CallSub(Gridtitle)
+F.Intrinsic.Control.CallSub(Gridstyle)
+F.Intrinsic.Control.CallSub(Gridload)
+Gui.F_Repricing..Show
+
+
+Program.Sub.Main.End
+
+program.sub.f_repricing_unload.start
+F.ODBC.Connection!con.Close
+F.Intrinsic.Control.End
+
+program.sub.f_repricing_unload.end
+
+program.sub.cmdplbrows_click.start
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.Control.SetErrorHandler("cmdPLBrows_Err")
+F.Intrinsic.Control.ClearErrors
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser(130,"",V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.F_Repricing.txtPL.Text(V.Local.sRet.Trim)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdPLBrows_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdplbrows_click.end
+
+program.sub.cmdcustbrows_click.start
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.sWidths.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.Control.SetErrorHandler("cmdPLBrowsBeg_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sSql.Set("Select CUSTOMER, NAME_CUSTOMER, CITY, STATE,ZIP, COUNTRY, TELEPHONE  from V_CUSTOMER_MASTER ORDER BY CUSTOMER")
+V.Local.sTitles.Set("Customer*!*Name*!*City*!*State*!*Zip*!*Country*!*Telephone")
+V.Local.sWidths.Set("1250*!*3200*!*2500*!*500*!*1250*!*1250*!*2000")
+
+F.Intrinsic.String.Split(V.Local.sTitles,"*!*",V.Local.sTitles)
+F.Intrinsic.String.Split(V.Local.sWidths,"*!*",V.Local.sWidths)
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser("Selet Beginning Product Line","con",V.Local.sSql,V.Local.sTitles,V.Local.sWidths,12900,8000,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.F_Repricing.txtCust.Text(V.Local.sRet.Trim)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdPLBrowsBeg_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdcustbrows_click.end
+
+program.sub.cmdpartbrows_click.start
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.Control.SetErrorHandler("cmdPartBrows_Err")
+F.Intrinsic.Control.ClearErrors
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser(105,"",V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.F_Repricing.txtPart.Text(V.Local.sRet.Trim)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdPartBrows_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdpartbrows_click.end
+
+Program.Sub.GridLoad.Start
+V.Local.sError.Declare(String)
+V.Local.iCol.Declare(Long)
+V.Local.sSql.Declare(String)
+
+F.Intrinsic.Control.SetErrorHandler("GridLoad_Err")
+F.Intrinsic.Control.ClearErrors
+
+Gui.F_Repricing.gsfMatrix.Rows(1)
+V.uGlobal.uMatrix.Redim(-1,-1)
+V.Local.sSql.Set("Select * from ATG_3218_Reprice_Matrix Order BY Product_Line, Customer, Part")
+F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,<>,True)
+	V.uGlobal.uMatrix.Redim(0,0)
+	F.Intrinsic.Variable.LoadUDTFromRecordset("con","rst","uGlobal.uMatrix",False)
+	Gui.F_Repricing.gsfMatrix.LoadFromUDT("uGlobal.uMatrix","PL*!*Cust*!*Part*!*List*!*Alt1*!*Alt2*!*Alt3*!*Alt4*!*Alt5*!*Alt6*!*Alt7*!*Alt8*!*Alt9*!*Alt10*!*Alt11*!*Alt12*!*Alt13*!*Alt14",2)
+F.Intrinsic.Control.EndIf
+F.ODBC.con!rst.Close
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("GridLoad_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.GridLoad.End
+
+program.sub.cmdadd_click.start
+V.Local.sError.Declare(String)
+V.Local.sPL.Declare(String)
+V.Local.sCust.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.sSql.Declare(String)
+
+F.Intrinsic.Control.SetErrorHandler("cmdAdd_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sPL.Set(V.Screen.F_Repricing!txtPL.Text)
+V.Local.sCust.Set(V.Screen.F_Repricing!txtCust.Text)
+V.Local.sPart.Set(V.Screen.F_Repricing!txtPart.Text)
+F.Intrinsic.Control.If(V.Local.sPL,=,"")
+	F.Intrinsic.Control.If(V.Local.sCust,=,"")
+		F.Intrinsic.Control.If(V.Local.sPart,=,"")
+			Gui.F_Repricing.txtPL.Text("")
+			Gui.F_Repricing.txtCust.Text("")
+			Gui.F_Repricing.txtPart.Text("")
+			F.Intrinsic.UI.Msgbox("Please make a valid selection!","Invalid Selection")
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.sPart,<>,"")
+			Gui.F_Repricing.txtPL.Text("")
+			Gui.F_Repricing.txtCust.Text("")
+			Gui.F_Repricing.txtPart.Text("")
+			F.Intrinsic.UI.Msgbox("Please make a valid selection!  Valid selections are Product Line, Product Line/Customer, Customer, or Part.","Invalid Selection")
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.If(V.Local.sPart,<>,"")
+		Gui.F_Repricing.txtPL.Text("")
+		Gui.F_Repricing.txtCust.Text("")
+		Gui.F_Repricing.txtPart.Text("")
+		F.Intrinsic.UI.Msgbox("Please make a valid selection!  Valid selections are Product Line, Product Line/Customer, Customer, or Part.","Invalid Selection")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Concat("Select * from ATG_3218_Reprice_Matrix where Product_Line = '",V.Local.sPL,"' and Customer = '",V.Local.sCust,"' and Part = '",V.Local.sPart,"'",V.Local.sSql)
+F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,True)
+	Gui.F_Repricing.gsfMatrix.Visible(False)
+	F.ODBC.con!rst.Close
+	V.Local.sSql.Set("Select * from ATG_3218_Reprice_Matrix")
+	F.ODBC.Connection!con.OpenRecordsetRW("rst",V.Local.sSql)
+	F.ODBC.con!rst.AddNew
+	F.ODBC.con!rst.Set!Product_Line(V.Local.sPL)
+	F.ODBC.con!rst.Set!Customer(V.Local.sCust)
+	F.ODBC.con!rst.Set!Part(V.Local.sPart)
+	F.ODBC.con!rst.Set!List_Price(0)
+	F.ODBC.con!rst.Set!Alt1_Price(0)
+	F.ODBC.con!rst.Set!Alt2_Price(0)
+	F.ODBC.con!rst.Set!Alt3_Price(0)
+	F.ODBC.con!rst.Set!Alt4_Price(0)
+	F.ODBC.con!rst.Set!Alt5_Price(0)
+	F.ODBC.con!rst.Set!Alt6_Price(0)
+	F.ODBC.con!rst.Set!Alt7_Price(0)
+	F.ODBC.con!rst.Set!Alt8_Price(0)
+	F.ODBC.con!rst.Set!Alt9_Price(0)
+	F.ODBC.con!rst.Set!Alt10_Price(0)
+	F.ODBC.con!rst.Set!Alt11_Price(0)
+	F.ODBC.con!rst.Set!Alt12_Price(0)
+	F.ODBC.con!rst.Set!Alt13_Price(0)
+	F.ODBC.con!rst.Set!Alt14_Price(0)
+	F.ODBC.con!rst.Update
+	Gui.F_Repricing.txtPL.Text("")
+	Gui.F_Repricing.txtCust.Text("")
+	Gui.F_Repricing.txtPart.Text("")
+	F.ODBC.con!rst.Close
+	F.Intrinsic.Control.CallSub(Gridload)
+	Gui.F_Repricing.gsfMatrix.Visible(True)
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("Product Line, Product Line/Customer, Customer, or Part already exists!","Invalid Selection")
+	F.ODBC.con!rst.Close
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdAdd_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdadd_click.end
+
+Program.Sub.GridTitle.Start
+V.Local.sError.Declare(String)
+V.Local.iCol.Declare(Long)
+
+F.Intrinsic.Control.SetErrorHandler("GridTitle_Err")
+F.Intrinsic.Control.ClearErrors
+
+Gui.F_Repricing.gsfMatrix.Rows(1)
+Gui.F_Repricing.gsfMatrix.Cols(19)
+Gui.F_Repricing.gsfMatrix.TextMatrix(0,0,"PL")
+Gui.F_Repricing.gsfMatrix.ColWidth(0,500)
+Gui.F_Repricing.gsfMatrix.TextMatrix(1,0,"Customer")
+Gui.F_Repricing.gsfMatrix.TextMatrix(2,0,"Part")
+Gui.F_Repricing.gsfMatrix.ColWidth(2,1600)
+Gui.F_Repricing.gsfMatrix.TextMatrix(3,0,"List")
+Gui.F_Repricing.gsfMatrix.TextMatrix(4,0,"Alt 1")
+Gui.F_Repricing.gsfMatrix.TextMatrix(5,0,"Alt 2")
+Gui.F_Repricing.gsfMatrix.TextMatrix(6,0,"Alt 3")
+Gui.F_Repricing.gsfMatrix.TextMatrix(7,0,"Alt 4")
+Gui.F_Repricing.gsfMatrix.TextMatrix(8,0,"Alt 5")
+Gui.F_Repricing.gsfMatrix.TextMatrix(9,0,"Alt 6")
+Gui.F_Repricing.gsfMatrix.TextMatrix(10,0,"Alt 7")
+Gui.F_Repricing.gsfMatrix.TextMatrix(11,0,"Alt 8")
+Gui.F_Repricing.gsfMatrix.TextMatrix(12,0,"Alt 9")
+Gui.F_Repricing.gsfMatrix.TextMatrix(13,0,"Alt 10")
+Gui.F_Repricing.gsfMatrix.TextMatrix(14,0,"Alt 11")
+Gui.F_Repricing.gsfMatrix.TextMatrix(15,0,"Alt 12")
+Gui.F_Repricing.gsfMatrix.TextMatrix(16,0,"Alt 13")
+Gui.F_Repricing.gsfMatrix.TextMatrix(17,0,"Alt 14")
+Gui.F_Repricing.gsfMatrix.TextMatrix(18,0,"")
+
+F.Intrinsic.Control.DoUntil(V.Local.iCol,=,19)
+	Gui.F_Repricing.gsfMatrix.BuildStyle(1,V.Local.iCol,"type","locked",True)
+	Gui.F_Repricing.gsfMatrix.BuildStyle(1,V.Local.iCol,"format","alignment",2)
+	Gui.F_Repricing.gsfMatrix.BuildStyle(1,V.Local.iCol,"fontstyle","bold",True)
+	F.Intrinsic.Math.Add(V.Local.iCol,1,V.Local.iCol)
+F.Intrinsic.Control.Loop
+Gui.F_Repricing.gsfMatrix.ApplyStyle(0,1)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("GridTitle_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.GridTitle.End
+
+Program.Sub.GridStyle.Start
+V.Local.sError.Declare(String)
+V.Local.iCol.Declare(Long)
+
+F.Intrinsic.Control.SetErrorHandler("Error_Err")
+F.Intrinsic.Control.ClearErrors
+
+F.Intrinsic.Control.DoUntil(V.Local.iCol,=,3)
+	Gui.F_Repricing.gsfMatrix.BuildStyle(2,V.Local.iCol,"type","locked",True)
+	Gui.F_Repricing.gsfMatrix.BuildStyle(2,V.Local.iCol,"format","alignment",2)
+	Gui.F_Repricing.gsfMatrix.BuildStyle(2,V.Local.iCol,"fontstyle","bold",False)
+	F.Intrinsic.Math.Add(V.Local.iCol,1,V.Local.iCol)
+F.Intrinsic.Control.Loop
+F.Intrinsic.Control.DoUntil(V.Local.iCol,=,17)
+	Gui.F_Repricing.gsfMatrix.BuildStyle(2,V.Local.iCol,"type","locked",False)
+	F.Intrinsic.Control.If(V.Local.iCol,<=,2)
+		Gui.F_Repricing.gsfMatrix.BuildStyle(2,V.Local.iCol,"format","alignment",2)
+	F.Intrinsic.Control.Else
+		Gui.F_Repricing.gsfMatrix.BuildStyle(2,V.Local.iCol,"format","alignment",6)
+	F.Intrinsic.Control.EndIf
+	Gui.F_Repricing.gsfMatrix.BuildStyle(2,V.Local.iCol,"fontstyle","bold",False)
+	F.Intrinsic.Math.Add(V.Local.iCol,1,V.Local.iCol)
+F.Intrinsic.Control.Loop
+Gui.F_Repricing.gsfMatrix.BuildStyle(2,18,"type","command","Delete")
+Gui.F_Repricing.gsfMatrix.BuildStyle(2,18,"format","alignment",4)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Error_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.GridStyle.End
+
+program.sub.gsfmatrix_commandclick.start
+V.Local.sError.Declare(String)
+V.Local.sRow.Declare(String)
+V.Local.sSql.Declare(String)
+
+F.Intrinsic.Control.SetErrorHandler("cmdDelete_Err")
+F.Intrinsic.Control.ClearErrors
+
+Gui.F_Repricing.gsfMatrix.Visible(False)
+Gui.F_Repricing.gsfMatrix.ReadRow(V.Args.Key,V.Local.sRow)
+F.Intrinsic.String.Split(V.Local.sRow,"*!*",V.Local.sRow)
+F.Intrinsic.String.Concat("Delete ATG_3218_Reprice_Matrix where Product_Line = '",V.Local.sRow(0),"' and Customer = '",V.Local.sRow(1),"' and Part = '",V.Local.sRow(2),"'",V.Local.sSql)
+F.ODBC.Connection!con.Execute(V.Local.sSql)
+F.Intrinsic.Control.CallSub(Gridload)
+Gui.F_Repricing.gsfMatrix.Visible(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdDelete_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.gsfmatrix_commandclick.end
+
+program.sub.cmdsave_click.start
+V.Local.sError.Declare(String)
+V.Local.iRow.Declare(Long)
+V.Local.i.Declare(Long)
+V.Local.sRow.Declare(String)
+V.Local.sRowArray.Declare(String)
+V.Local.sSql.Declare(String)
+
+F.Intrinsic.Control.SetErrorHandler("cmdSave_Err")
+F.Intrinsic.Control.ClearErrors
+
+F.Intrinsic.UI.InvokeWaitDialog("Saving matrix","Record Save")
+V.Local.iRow.Set(V.Screen.F_Repricing!gsfMatrix.Rows)
+F.Intrinsic.Math.Sub(V.Local.iRow,1,V.Local.iRow)
+F.Intrinsic.Control.For(V.Local.i,1,V.Local.iRow,1)
+	F.Intrinsic.UI.ChangeWaitStatus("Saving matrix",V.Local.i,1,V.Local.iRow)
+	Gui.F_Repricing.gsfMatrix.ReadRow(V.Local.i,V.Local.sRow)
+	F.Intrinsic.String.Split(V.Local.sRow,"*!*",V.Local.sRowArray)
+	F.Intrinsic.String.Concat("Select * from ATG_3218_Reprice_Matrix where Product_Line = '",V.Local.sRowArray(0),"' and Customer = '",V.Local.sRowArray(1),"' and Part = '",V.Local.sRowArray(2),"'",V.Local.sSql)
+	F.ODBC.Connection!con.OpenRecordsetRW("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.Local.sRowArray(3),=,"")
+		F.ODBC.con!rst.Set!List_Price(0)
+	F.Intrinsic.Control.Else
+		F.ODBC.con!rst.Set!List_Price(V.Local.sRowArray(3))
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.sRowArray(4),=,"")
+		F.ODBC.con!rst.Set!Alt1_Price(0)
+	F.Intrinsic.Control.Else
+		F.ODBC.con!rst.Set!Alt1_Price(V.Local.sRowArray(4))
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.sRowArray(5),=,"")
+		F.ODBC.con!rst.Set!Alt2_Price(0)
+	F.Intrinsic.Control.Else
+		F.ODBC.con!rst.Set!Alt2_Price(V.Local.sRowArray(5))
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.sRowArray(6),=,"")
+		F.ODBC.con!rst.Set!Alt3_Price(0)
+	F.Intrinsic.Control.Else
+		F.ODBC.con!rst.Set!Alt3_Price(V.Local.sRowArray(6))
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.sRowArray(7),=,"")
+		F.ODBC.con!rst.Set!Alt4_Price(0)
+	F.Intrinsic.Control.Else
+		F.ODBC.con!rst.Set!Alt4_Price(V.Local.sRowArray(7))
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.sRowArray(8),=,"")
+		F.ODBC.con!rst.Set!Alt5_Price(0)
+	F.Intrinsic.Control.Else
+		F.ODBC.con!rst.Set!Alt5_Price(V.Local.sRowArray(8))
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.sRowArray(9),=,"")
+		F.ODBC.con!rst.Set!Alt6_Price(0)
+	F.Intrinsic.Control.Else
+		F.ODBC.con!rst.Set!Alt6_Price(V.Local.sRowArray(9))
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.sRowArray(10),=,"")
+		F.ODBC.con!rst.Set!Alt7_Price(0)
+	F.Intrinsic.Control.Else
+		F.ODBC.con!rst.Set!Alt7_Price(V.Local.sRowArray(10))
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.sRowArray(11),=,"")
+		F.ODBC.con!rst.Set!Alt8_Price(0)
+	F.Intrinsic.Control.Else
+		F.ODBC.con!rst.Set!Alt8_Price(V.Local.sRowArray(11))
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.sRowArray(12),=,"")
+		F.ODBC.con!rst.Set!Alt9_Price(0)
+	F.Intrinsic.Control.Else
+		F.ODBC.con!rst.Set!Alt9_Price(V.Local.sRowArray(12))
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.sRowArray(13),=,"")
+		F.ODBC.con!rst.Set!Alt10_Price(0)
+	F.Intrinsic.Control.Else
+		F.ODBC.con!rst.Set!Alt10_Price(V.Local.sRowArray(13))
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.sRowArray(14),=,"")
+		F.ODBC.con!rst.Set!Alt11_Price(0)
+	F.Intrinsic.Control.Else
+		F.ODBC.con!rst.Set!Alt11_Price(V.Local.sRowArray(14))
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.sRowArray(15),=,"")
+		F.ODBC.con!rst.Set!Alt12_Price(0)
+	F.Intrinsic.Control.Else
+		F.ODBC.con!rst.Set!Alt12_Price(V.Local.sRowArray(15))
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.sRowArray(16),=,"")
+		F.ODBC.con!rst.Set!Alt13_Price(0)
+	F.Intrinsic.Control.Else
+		F.ODBC.con!rst.Set!Alt13_Price(V.Local.sRowArray(16))
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.sRowArray(17),=,"")
+		F.ODBC.con!rst.Set!Alt15_Price(0)
+	F.Intrinsic.Control.Else
+		F.ODBC.con!rst.Set!Alt14_Price(V.Local.sRowArray(17))
+	F.Intrinsic.Control.EndIf
+
+	F.ODBC.con!rst.Update
+	F.ODBC.con!rst.Close
+F.Intrinsic.Control.Next(V.Local.i)
+F.Intrinsic.UI.CloseWaitDialog
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdSave_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdsave_click.end
+
+program.sub.cmdupdate_click.start
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.SetErrorHandler("cmdUpdate_Err")
+F.Intrinsic.Control.ClearErrors
+
+F.Intrinsic.UI.InvokeWaitDialog("Updating pricing","Update Price")
+F.Intrinsic.Control.CallSub(Plupdate)
+F.Intrinsic.Control.CallSub(Partupdate)
+F.Intrinsic.Control.CallSub(Custupdate)
+F.Intrinsic.Control.CallSub(Plcustupdate)
+F.Intrinsic.UI.CloseWaitDialog
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdUpdate_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdupdate_click.end
+
+Program.Sub.PLUpdate.Start
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.fPrice.Declare(Float)
+
+F.Intrinsic.Control.SetErrorHandler("PLUpdate_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sSql.Set("Select * from ATG_3218_Reprice_Matrix where (Customer = '' or Customer is null) and (Part = '' or Part is null)")
+F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.sSql)
+F.Intrinsic.Control.DoUntil(V.ODBC.con!rst.EOF,=,True)
+	F.Intrinsic.String.Concat("Select PART, PRODUCT_LINE, AMT_ALT_COST, AMT_PRICE from INVENTORY_MSTR where PRODUCT_LINE = '",V.ODBC.con!rst.FieldValTrim!Product_Line,"'",V.Local.sSql)
+	F.ODBC.Connection!con.OpenRecordsetRW("rstI1",V.Local.sSql)
+	F.Intrinsic.Control.DoUntil(V.ODBC.con!rstI1.EOF,=,True)
+		F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!List_Price,<>,0)
+			F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!List_Price,100,V.Local.fPrice)
+			F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+			F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+			F.Intrinsic.Math.Round(V.Local.fPrice,5,V.Local.fPrice)
+			F.ODBC.con!rstI1.Set!AMT_PRICE(V.Local.fPrice)
+			F.ODBC.con!rstI1.Update
+			F.Intrinsic.String.Concat("Select * from INV_ALT_PRICE where PART = '",V.ODBC.con!rstI1.FieldVal!PART,"'",V.Local.sSql)
+			F.ODBC.Connection!con.OpenRecordsetRW("rstIPrice",V.Local.sSql)
+			F.Intrinsic.Control.DoUntil(V.ODBC.con!rstIPrice.EOF,=,True)
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt1_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt1_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_1(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt2_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt2_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_2(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt3_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt3_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_3(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt4_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt4_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_4(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt5_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt5_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_5(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt6_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt6_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_6(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt7_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt7_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_7(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt8_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt8_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_8(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt9_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt9_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_9(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt10_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt10_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_10(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt11_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt11_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_11(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt12_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt12_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_12(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt13_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt13_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_13(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt14_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt14_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_14(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.ODBC.con!rstIPrice.Update
+				F.ODBC.con!rstIPrice.MoveNext
+			F.Intrinsic.Control.Loop
+			F.ODBC.con!rstIPrice.Close
+		F.Intrinsic.Control.EndIf
+		F.ODBC.con!rstI1.MoveNext
+	F.Intrinsic.Control.Loop
+	F.ODBC.con!rstI1.Close
+	F.ODBC.con!rst.MoveNext
+F.Intrinsic.Control.Loop
+F.ODBC.con!rst.Close
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("PLUpdate_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.PLUpdate.End
+
+Program.Sub.PartUpdate.Start
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.fPrice.Declare(Float)
+
+F.Intrinsic.Control.SetErrorHandler("PartUpdate_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sSql.Set("Select * from ATG_Reprice_Matrix where (Product_Line = '' or Product_Line is null) and (Customer = '' or Customer is null)")
+F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.sSql)
+F.Intrinsic.Control.DoUntil(V.ODBC.con!rst.EOF,=,True)
+	F.Intrinsic.String.Concat("Select PART, PRODUCT_LINE, AMT_ALT_COST, AMT_PRICE from INVENTORY_MSTR where PART = '",V.ODBC.con!rst.FieldValTrim!Part,"'",V.Local.sSql)
+	F.ODBC.Connection!con.OpenRecordsetRW("rstI1",V.Local.sSql)
+	F.Intrinsic.Control.DoUntil(V.ODBC.con!rstI1.EOF,=,True)
+		F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!List_Price,<>,0)
+			F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!List_Price,100,V.Local.fPrice)
+			F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+			F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+			F.Intrinsic.Math.Round(V.Local.fPrice,5,V.Local.fPrice)
+			F.ODBC.con!rstI1.Set!AMT_PRICE(V.Local.fPrice)
+			F.ODBC.con!rstI1.Update
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.String.Concat("Select * from INV_ALT_PRICE where PART = '",V.ODBC.con!rst.FieldValTrim!PART,"'",V.Local.sSql)
+		F.ODBC.Connection!con.OpenRecordsetRW("rstIPrice",V.Local.sSql)
+		F.Intrinsic.Control.DoUntil(V.ODBC.con!rstIPrice.EOF,=,True)
+			F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt1_Price,<>,0)
+				F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt1_Price,100,V.Local.fPrice)
+				F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+				F.ODBC.con!rstIPrice.Set!ALT_PRICE_1(V.Local.fPrice)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt2_Price,<>,0)
+				F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt2_Price,100,V.Local.fPrice)
+				F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+				F.ODBC.con!rstIPrice.Set!ALT_PRICE_2(V.Local.fPrice)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt3_Price,<>,0)
+				F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt3_Price,100,V.Local.fPrice)
+				F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+				F.ODBC.con!rstIPrice.Set!ALT_PRICE_3(V.Local.fPrice)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt4_Price,<>,0)
+				F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt4_Price,100,V.Local.fPrice)
+				F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+				F.ODBC.con!rstIPrice.Set!ALT_PRICE_4(V.Local.fPrice)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt5_Price,<>,0)
+				F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt5_Price,100,V.Local.fPrice)
+				F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+				F.ODBC.con!rstIPrice.Set!ALT_PRICE_5(V.Local.fPrice)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt6_Price,<>,0)
+				F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt6_Price,100,V.Local.fPrice)
+				F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+				F.ODBC.con!rstIPrice.Set!ALT_PRICE_6(V.Local.fPrice)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt7_Price,<>,0)
+				F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt7_Price,100,V.Local.fPrice)
+				F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+				F.ODBC.con!rstIPrice.Set!ALT_PRICE_7(V.Local.fPrice)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt8_Price,<>,0)
+				F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt8_Price,100,V.Local.fPrice)
+				F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+				F.ODBC.con!rstIPrice.Set!ALT_PRICE_8(V.Local.fPrice)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt9_Price,<>,0)
+				F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt9_Price,100,V.Local.fPrice)
+				F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+				F.ODBC.con!rstIPrice.Set!ALT_PRICE_9(V.Local.fPrice)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt10_Price,<>,0)
+				F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt10_Price,100,V.Local.fPrice)
+				F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+				F.ODBC.con!rstIPrice.Set!ALT_PRICE_10(V.Local.fPrice)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt11_Price,<>,0)
+				F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt11_Price,100,V.Local.fPrice)
+				F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+				F.ODBC.con!rstIPrice.Set!ALT_PRICE_11(V.Local.fPrice)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt12_Price,<>,0)
+				F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt12_Price,100,V.Local.fPrice)
+				F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+				F.ODBC.con!rstIPrice.Set!ALT_PRICE_12(V.Local.fPrice)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt13_Price,<>,0)
+				F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt13_Price,100,V.Local.fPrice)
+				F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+				F.ODBC.con!rstIPrice.Set!ALT_PRICE_13(V.Local.fPrice)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt14_Price,<>,0)
+				F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt14_Price,100,V.Local.fPrice)
+				F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+				F.ODBC.con!rstIPrice.Set!ALT_PRICE_14(V.Local.fPrice)
+			F.Intrinsic.Control.EndIf
+			F.ODBC.con!rstIPrice.Update
+			F.ODBC.con!rstIPrice.MoveNext
+		F.Intrinsic.Control.Loop
+		F.ODBC.con!rstIPrice.Close
+		F.ODBC.con!rstI1.MoveNext
+	F.Intrinsic.Control.Loop
+	F.ODBC.con!rstI1.Close
+	F.ODBC.con!rst.MoveNext
+F.Intrinsic.Control.Loop
+F.ODBC.con!rst.Close
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("PartUpdate_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.PartUpdate.End
+
+Program.Sub.CustUpdate.Start
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.fPrice.Declare(Float)
+
+F.Intrinsic.Control.SetErrorHandler("CustUpdate_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sSql.Set("Select * from ATG_Reprice_Matrix where (Product_Line = '' or Product_Line is null) and (Part = '' or Part is null)")
+F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.sSql)
+F.Intrinsic.Control.DoUntil(V.ODBC.con!rst.EOF,=,True)
+	F.Intrinsic.String.Concat("Select PART, TEXT_INFO1 from V_INVENTORY_MST2 where TEXT_INFO1 = '",V.ODBC.con!rst.FieldValTrim!Customer,"'",V.Local.sSql)
+	F.ODBC.Connection!con.OpenRecordsetRO("rstI2",V.Local.sSql)
+	F.Intrinsic.Control.DoUntil(V.ODBC.con!rstI2.EOF,=,True)
+		F.Intrinsic.String.Concat("Select PART, PRODUCT_LINE, AMT_ALT_COST, AMT_PRICE from INVENTORY_MSTR where PART = '",V.ODBC.con!rstI2.FieldValTrim!Part,"'",V.Local.sSql)
+		F.ODBC.Connection!con.OpenRecordsetRW("rstI1",V.Local.sSql)
+		F.Intrinsic.Control.DoUntil(V.ODBC.con!rstI1.EOF,=,True)
+			F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!List_Price,<>,0)
+				F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!List_Price,100,V.Local.fPrice)
+				F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Round(V.Local.fPrice,5,V.Local.fPrice)
+				F.ODBC.con!rstI1.Set!AMT_PRICE(V.Local.fPrice)
+				F.ODBC.con!rstI1.Update
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.String.Concat("Select * from INV_ALT_PRICE where PART = '",V.ODBC.con!rstI1.FieldVal!PART,"'",V.Local.sSql)
+			F.ODBC.Connection!con.OpenRecordsetRW("rstIPrice",V.Local.sSql)
+			F.Intrinsic.Control.DoUntil(V.ODBC.con!rstIPrice.EOF,=,True)
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt1_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt1_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_1(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt2_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt2_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_2(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt3_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt3_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_3(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt4_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt4_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_4(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt5_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt5_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_5(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt6_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt6_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_6(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt7_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt7_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_7(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt8_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt8_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_8(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt9_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt9_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_9(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt10_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt10_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_10(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt11_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt11_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_11(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt12_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt12_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_12(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt13_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt13_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_13(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt14_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt14_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_14(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.ODBC.con!rstIPrice.MoveNext
+			F.Intrinsic.Control.Loop
+			F.ODBC.con!rstIPrice.Close
+			F.ODBC.con!rstI1.MoveNext
+		F.Intrinsic.Control.Loop
+		F.ODBC.con!rstI1.Close
+		F.ODBC.con!rstI2.MoveNext
+	F.Intrinsic.Control.Loop
+	F.ODBC.con!rstI2.Close
+	F.ODBC.con!rst.MoveNext
+F.Intrinsic.Control.Loop
+F.ODBC.con!rst.Close
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("CustUpdate_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.CustUpdate.End
+
+Program.Sub.PLCustUpdate.Start
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.fPrice.Declare(Float)
+
+F.Intrinsic.Control.SetErrorHandler("PLCust_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sSql.Set("Select * from ATG_3218_Reprice_Matrix where (Product_Line <> '' or Product_Line is not null) and (Customer <> '' or Customer is not null) and (Part = '' or Part is null)")
+F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.sSql)
+F.Intrinsic.Control.DoUntil(V.ODBC.con!rst.EOF,=,True)
+	F.Intrinsic.String.Concat("Select INVENTORY_MSTR.PART from INVENTORY_MSTR inner join INVENTORY_MST2 on INVENTORY_MSTR.PART = INVENTORY_MST2.PART where INVENTORY_MSTR.PRODUCT_LINE = '",V.ODBC.con!rst.FieldValTrim!Product_Line,"' and INVENTORY_MST2.TEXT_INFO1 = '",V.ODBC.con!rst.FieldValTrim!Customer,"'",V.Local.sSql)
+	F.ODBC.Connection!con.OpenRecordsetRO("rstI12",V.Local.sSql)
+	F.Intrinsic.Control.DoUntil(V.ODBC.con!rstI12.EOF,=,True)
+		F.Intrinsic.String.Concat("Select PART, PRODUCT_LINE, AMT_ALT_COST, AMT_PRICE from INVENTORY_MSTR where PART = '",V.ODBC.con!rstI12.FieldValTrim!Part,"'",V.Local.sSql)
+		F.ODBC.Connection!con.OpenRecordsetRW("rstI1",V.Local.sSql)
+		F.Intrinsic.Control.DoUntil(V.ODBC.con!rstI1.EOF,=,True)
+			F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!List_Price,<>,0)
+				F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!List_Price,100,V.Local.fPrice)
+				F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+				F.Intrinsic.Math.Round(V.Local.fPrice,5,V.Local.fPrice)
+				F.ODBC.con!rstI1.Set!AMT_PRICE(V.Local.fPrice)
+				F.ODBC.con!rstI1.Update
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.String.Concat("Select * from INV_ALT_PRICE where PART = '",V.ODBC.con!rstI1.FieldValTrim!PART,"'",V.Local.sSql)
+			F.ODBC.Connection!con.OpenRecordsetRW("rstIPrice",V.Local.sSql)
+			F.Intrinsic.Control.DoUntil(V.ODBC.con!rstIPrice.EOF,=,True)
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt1_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt1_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_1(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt2_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt2_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_2(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt3_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt3_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_3(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt4_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt4_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_4(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt5_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt5_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_5(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt6_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt6_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_6(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt7_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt7_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_7(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt8_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt8_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_8(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt9_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt9_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_9(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt10_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt10_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_10(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt11_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt11_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_11(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt12_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt12_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_12(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt13_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt13_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_13(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValLong!Alt14_Price,<>,0)
+					F.Intrinsic.Math.Div(V.ODBC.con!rst.FieldValLong!Alt14_Price,100,V.Local.fPrice)
+					F.Intrinsic.Math.Mult(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Add(V.Local.fPrice,V.ODBC.con!rstI1.FieldValFloat!AMT_ALT_COST,V.Local.fPrice)
+					F.Intrinsic.Math.Round(V.Local.fPrice,6,V.Local.fPrice)
+					F.ODBC.con!rstIPrice.Set!ALT_PRICE_14(V.Local.fPrice)
+				F.Intrinsic.Control.EndIf
+				F.ODBC.con!rstIPrice.Update
+				F.ODBC.con!rstIPrice.MoveNext
+			F.Intrinsic.Control.Loop
+			F.ODBC.con!rstIPrice.Close
+			F.ODBC.con!rstI1.MoveNext
+		F.Intrinsic.Control.Loop
+		F.ODBC.con!rstI1.Close
+		F.ODBC.con!rstI12.MoveNext
+	F.Intrinsic.Control.Loop
+	F.ODBC.con!rstI12.Close
+	F.ODBC.con!rst.MoveNext
+F.Intrinsic.Control.Loop
+F.ODBC.con!rst.Close
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("PLCust_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.PLCustUpdate.End
+
+Program.Sub.ScreenSS.Start
+
+SS_Form1
+SS_Form1
+SS_Form1
+SS_Form1
+SS_Form1
+SS_Form1
+SS_Form1
+
+Program.Sub.ScreenSS.End
+
